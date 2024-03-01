@@ -13,6 +13,28 @@ use WP_UnitTestCase;
  * Test the rewrite rules.
  */
 class Test_Fonts_To_Uploads extends WP_UnitTestCase {
+	/**
+	 * Ensure `add_filter( 'upload_dir', 'wp_get_font_dir' );` does not trigger an infinite loop.
+	 */
+	public function test_filter_does_not_cause_infinite_loop() {
+		add_filter( 'upload_dir', 'wp_get_font_dir' );
+
+		add_filter(
+			'upload_dir',
+			function( $upload_dir ) {
+				static $count = 0;
+				++$count;
+				$this->assertSame( 1, $count, 'Filtering uploads directory should not trigger infinite loop.' );
+				return $upload_dir;
+			},
+			5
+		);
+
+		$uploads = wp_get_upload_dir();
+
+		// This will never be hit if an infinite loop is triggered.
+		$this->assertTrue( true );
+	}
 
 	/**
 	 * Ensure font directory begins with uploads base path.
