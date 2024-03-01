@@ -1,0 +1,24 @@
+{
+    "name": "peterwilsoncc/embed-redirects",
+    "description": "A WordPress plugin to enable links in embeds to third party sites via a redirect.",
+    "type": "wordpress-plugin",
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "wp-coding-standards/wpcs": "^2.3",
+        "yoast/phpunit-polyfills": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Wilson",
+            "email": "peter@peterwilson.cc"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
