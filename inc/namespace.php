@@ -15,8 +15,14 @@ namespace PWCC\FontsToUploads;
  */
 function bootstrap() {
 	add_filter( 'font_dir', __NAMESPACE__ . '\\filter_default_font_directory' );
-	// Prime the cache.
-	add_action( 'init', __NAMESPACE__ . '\\cached_wp_get_upload_dir' );
+
+	/*
+	 * Prime the uploads cache hook.
+	 *
+	 * This runs late on the `init` hook to allow time for plugins to register
+	 * custom upload directory file handlers.
+	 */
+	add_action( 'init', __NAMESPACE__ . '\\cached_wp_get_upload_dir', 20 );
 }
 
 /**
