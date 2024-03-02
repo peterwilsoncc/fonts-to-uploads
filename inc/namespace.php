@@ -35,6 +35,8 @@ function bootstrap() {
  * Without a primed cache, `wp_get_upload_dir()` would trigger the a call
  * to `wp_get_font_dir()` which would trigger a call to `wp_get_upload_dir()`.
  *
+ * @see https://github.com/pantheon-systems/pantheon-mu-plugin/blob/main/inc/fonts.php for inspiration.
+ *
  * @return array Result of wp_get_upload_dir().
  */
 function cached_wp_get_upload_dir() {
