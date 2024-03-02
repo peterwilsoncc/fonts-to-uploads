@@ -15,6 +15,30 @@ namespace PWCC\FontsToUploads;
  */
 function bootstrap() {
 	add_filter( 'font_dir', __NAMESPACE__ . '\\filter_default_font_directory' );
+	// Prime the cache.
+	add_action( 'init', __NAMESPACE__ . '\\cached_wp_get_upload_dir' );
+}
+
+/**
+ * Store the uploads directory in a static variable.
+ *
+ * This is the prevent the potential for infinite loops in the event
+ * an extender includes `add_filter( 'upload_dir', 'wp_get_font_dir' );`
+ * in their code base.
+ *
+ * Without a primed cache, `wp_get_upload_dir()` would trigger the a call
+ * to `wp_get_font_dir()` which would trigger a call to `wp_get_upload_dir()`.
+ *
+ * @return array Result of wp_get_upload_dir().
+ */
+function cached_wp_get_upload_dir() {
+	static $cached = null;
+
+	if ( null === $cached ) {
+		$cached = wp_get_upload_dir();
+	}
+
+	return $cached;
 }
 
 /**
@@ -27,7 +51,7 @@ function bootstrap() {
  * @return array The modified fonts directory.
  */
 function filter_default_font_directory( $font_directory ) {
-	$upload_dir = wp_get_upload_dir();
+	$upload_dir = cached_wp_get_upload_dir();
 
 	$font_directory = array(
 		'path'    => untrailingslashit( $upload_dir['basedir'] ) . '/wp-fonts',
