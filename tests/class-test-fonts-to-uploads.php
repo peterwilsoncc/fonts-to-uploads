@@ -24,7 +24,15 @@ class Test_Fonts_To_Uploads extends WP_UnitTestCase {
 			function( $upload_dir ) {
 				static $count = 0;
 				++$count;
-				$this->assertSame( 1, $count, 'Filtering uploads directory should not trigger infinite loop.' );
+
+				/*
+				 * Under normal circumstances the filter will be called twice.
+				 *
+				 * Once when the upload_dir is initially requested and once when the
+				 * font directory filter runs and requests the upload directory without
+				 * the filter applied.
+				 */
+				$this->assertLessThan( 3, $count, 'Filtering uploads directory should not trigger infinite loop.' );
 				return $upload_dir;
 			},
 			5
