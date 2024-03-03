@@ -17,7 +17,7 @@ function bootstrap() {
 	add_filter( 'font_dir', __NAMESPACE__ . '\\filter_default_font_directory' );
 
 	/*
-	 * Prime the uploads cache hook.
+	 * Prime the uploads directory cache.
 	 *
 	 * This runs late on the `init` hook to allow time for plugins to register
 	 * custom upload directory file handlers.
