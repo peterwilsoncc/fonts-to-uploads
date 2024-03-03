@@ -1,5 +1,5 @@
 {
-    "name": "peterwilsoncc/fonts-to-uploads",
+    "name": "peterwilsoncc/wp-fonts-to-uploads",
     "description": "A WordPress plugin to relocate the fonts directory to uploads.",
     "type": "wordpress-plugin",
     "require-dev": {
