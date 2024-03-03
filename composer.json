@@ -1,6 +1,6 @@
 {
-    "name": "peterwilsoncc/embed-redirects",
-    "description": "A WordPress plugin to enable links in embeds to third party sites via a redirect.",
+    "name": "peterwilsoncc/fonts-to-uploads",
+    "description": "A WordPress plugin to relocate the fonts directory to uploads.",
     "type": "wordpress-plugin",
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
