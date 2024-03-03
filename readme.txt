@@ -4,7 +4,7 @@ Tags: font-library, uploads
 Requires at least: 6.4
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0
 License: MIT
 License URI: https://github.com/peterwilsoncc/fonts-to-uploads/blob/main/LICENSE
 
@@ -29,5 +29,5 @@ Simply install the plugin and activate.
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0 =
 Initial release
