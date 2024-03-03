@@ -1,5 +1,6 @@
 {
     "name": "peterwilsoncc/wp-fonts-to-uploads",
+    "version": "1.0",
     "description": "A WordPress plugin to relocate the fonts directory to uploads.",
     "type": "wordpress-plugin",
     "require-dev": {
