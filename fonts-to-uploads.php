@@ -11,7 +11,7 @@
  * Plugin Name: Fonts to uploads
  * Description: Relocate the fonts directory to the uploads directory.
  * Version: 1.0.0
- * Requires at least: 6.5
+ * Requires at least: 6.4
  * Requires PHP: 7.4
  * Author: Peter Wilson
  * Author URI: https://peterwilson.cc
