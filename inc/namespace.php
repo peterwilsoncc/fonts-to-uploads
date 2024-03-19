@@ -62,11 +62,11 @@ function filter_default_font_directory( $font_directory ) {
 	$upload_dir = cached_wp_get_upload_dir();
 
 	$font_directory = array(
-		'path'    => untrailingslashit( $upload_dir['basedir'] ) . '/wp-fonts',
-		'url'     => untrailingslashit( $upload_dir['baseurl'] ) . '/wp-fonts',
+		'path'    => untrailingslashit( $upload_dir['basedir'] ) . '/fonts',
+		'url'     => untrailingslashit( $upload_dir['baseurl'] ) . '/fonts',
 		'subdir'  => '',
-		'basedir' => untrailingslashit( $upload_dir['basedir'] ) . '/wp-fonts',
-		'baseurl' => untrailingslashit( $upload_dir['baseurl'] ) . '/wp-fonts',
+		'basedir' => untrailingslashit( $upload_dir['basedir'] ) . '/fonts',
+		'baseurl' => untrailingslashit( $upload_dir['baseurl'] ) . '/fonts',
 		'error'   => false,
 	);
 
