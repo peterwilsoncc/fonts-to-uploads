@@ -4,7 +4,7 @@ Tags: Font Library, Uploads
 Requires at least: 6.4
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: MIT
 License URI: https://github.com/peterwilsoncc/fonts-to-uploads/blob/main/LICENSE
 
@@ -29,6 +29,10 @@ This plugin doesn't include any options to configure so no admin menu is require
 Simply install the plugin and activate.
 
 == Changelog ==
+
+= 1.0.1 =
+* Readme update
+* Set required version to WordPress 6.4 to allow for sites using the Gutenberg plugin.
 
 = 1.0.0 =
 Initial release
